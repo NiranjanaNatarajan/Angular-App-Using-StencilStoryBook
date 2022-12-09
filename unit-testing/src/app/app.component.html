@@ -1,23 +1,17 @@
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
-<!-- * * * * * * * to get started with your project! * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<br/><br/><button type="button" (click)="clicked()">Click me!</button><br/><br/>
+<br /><br /><button type="button" (click)="clicked()">Click me!</button><br /><br />
 <span>{{message}}</span>
 
+<h4>Calculator</h4>
+<div>
+    <input type="number" [(ngModel)]="numberOne" /><br /><br />
+    <input type="number" [(ngModel)]="numberTwo" />
+</div><br />
+<div>
+    <button (click)="add()">Add</button>&nbsp;
+    <button (click)="subtract()">Subtract</button>&nbsp;
+    <button (click)="clear()">Clear</button>
+</div>
 
-
-
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->
-<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
-<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
-<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<h5 *ngIf="result!=undefined">{{resultMessage}}{{result | strength}}</h5>
 
 <router-outlet></router-outlet>
