@@ -13,6 +13,15 @@ export namespace Components {
     }
     interface MyComponent {
     }
+    interface StencilButton {
+    }
+    interface StencilHint {
+        "msg": any;
+        "psw": boolean;
+    }
+    interface StencilLabel {
+        "label": any;
+    }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
     detail: T;
@@ -31,9 +40,30 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLStencilButtonElement extends Components.StencilButton, HTMLStencilElement {
+    }
+    var HTMLStencilButtonElement: {
+        prototype: HTMLStencilButtonElement;
+        new (): HTMLStencilButtonElement;
+    };
+    interface HTMLStencilHintElement extends Components.StencilHint, HTMLStencilElement {
+    }
+    var HTMLStencilHintElement: {
+        prototype: HTMLStencilHintElement;
+        new (): HTMLStencilHintElement;
+    };
+    interface HTMLStencilLabelElement extends Components.StencilLabel, HTMLStencilElement {
+    }
+    var HTMLStencilLabelElement: {
+        prototype: HTMLStencilLabelElement;
+        new (): HTMLStencilLabelElement;
+    };
     interface HTMLElementTagNameMap {
         "charts-dthree": HTMLChartsDthreeElement;
         "my-component": HTMLMyComponentElement;
+        "stencil-button": HTMLStencilButtonElement;
+        "stencil-hint": HTMLStencilHintElement;
+        "stencil-label": HTMLStencilLabelElement;
     }
 }
 declare namespace LocalJSX {
@@ -45,9 +75,21 @@ declare namespace LocalJSX {
     interface MyComponent {
         "onSubmitLogin"?: (event: MyComponentCustomEvent<any>) => void;
     }
+    interface StencilButton {
+    }
+    interface StencilHint {
+        "msg"?: any;
+        "psw"?: boolean;
+    }
+    interface StencilLabel {
+        "label"?: any;
+    }
     interface IntrinsicElements {
         "charts-dthree": ChartsDthree;
         "my-component": MyComponent;
+        "stencil-button": StencilButton;
+        "stencil-hint": StencilHint;
+        "stencil-label": StencilLabel;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +98,9 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "charts-dthree": LocalJSX.ChartsDthree & JSXBase.HTMLAttributes<HTMLChartsDthreeElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "stencil-button": LocalJSX.StencilButton & JSXBase.HTMLAttributes<HTMLStencilButtonElement>;
+            "stencil-hint": LocalJSX.StencilHint & JSXBase.HTMLAttributes<HTMLStencilHintElement>;
+            "stencil-label": LocalJSX.StencilLabel & JSXBase.HTMLAttributes<HTMLStencilLabelElement>;
         }
     }
 }
