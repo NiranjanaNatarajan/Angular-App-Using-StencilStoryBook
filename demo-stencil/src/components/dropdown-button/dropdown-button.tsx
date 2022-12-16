@@ -18,15 +18,14 @@ export class DropdownButton {
     };
     return (
       <Host>
-      <button
-        class={classMap}
-        type={this.type}
-        disabled={this.disabled}
-        part="button"
-      >
-        <slot></slot>
-      </button>
-    </Host>
+        <button
+          class={classMap}
+          type={this.type}
+          disabled={this.disabled}
+          part="button">
+          <slot></slot>
+        </button>
+      </Host>
     );
   }
 

@@ -27,6 +27,9 @@ export namespace Components {
     }
     interface StencilButton {
     }
+    interface StencilCheckbox {
+        "label": string;
+    }
     interface StencilDropdown {
     }
     interface StencilHint {
@@ -41,6 +44,9 @@ export namespace Components {
     }
     interface StencilLabel {
         "label": any;
+    }
+    interface StencilSearch {
+        "label": string;
     }
 }
 export interface DropdownDialogCustomEvent<T> extends CustomEvent<T> {
@@ -98,6 +104,12 @@ declare global {
         prototype: HTMLStencilButtonElement;
         new (): HTMLStencilButtonElement;
     };
+    interface HTMLStencilCheckboxElement extends Components.StencilCheckbox, HTMLStencilElement {
+    }
+    var HTMLStencilCheckboxElement: {
+        prototype: HTMLStencilCheckboxElement;
+        new (): HTMLStencilCheckboxElement;
+    };
     interface HTMLStencilDropdownElement extends Components.StencilDropdown, HTMLStencilElement {
     }
     var HTMLStencilDropdownElement: {
@@ -122,6 +134,12 @@ declare global {
         prototype: HTMLStencilLabelElement;
         new (): HTMLStencilLabelElement;
     };
+    interface HTMLStencilSearchElement extends Components.StencilSearch, HTMLStencilElement {
+    }
+    var HTMLStencilSearchElement: {
+        prototype: HTMLStencilSearchElement;
+        new (): HTMLStencilSearchElement;
+    };
     interface HTMLElementTagNameMap {
         "charts-dthree": HTMLChartsDthreeElement;
         "dropdown-button": HTMLDropdownButtonElement;
@@ -130,10 +148,12 @@ declare global {
         "dropdown-select": HTMLDropdownSelectElement;
         "my-component": HTMLMyComponentElement;
         "stencil-button": HTMLStencilButtonElement;
+        "stencil-checkbox": HTMLStencilCheckboxElement;
         "stencil-dropdown": HTMLStencilDropdownElement;
         "stencil-hint": HTMLStencilHintElement;
         "stencil-input": HTMLStencilInputElement;
         "stencil-label": HTMLStencilLabelElement;
+        "stencil-search": HTMLStencilSearchElement;
     }
 }
 declare namespace LocalJSX {
@@ -160,6 +180,9 @@ declare namespace LocalJSX {
     }
     interface StencilButton {
     }
+    interface StencilCheckbox {
+        "label"?: string;
+    }
     interface StencilDropdown {
     }
     interface StencilHint {
@@ -176,6 +199,9 @@ declare namespace LocalJSX {
     interface StencilLabel {
         "label"?: any;
     }
+    interface StencilSearch {
+        "label"?: string;
+    }
     interface IntrinsicElements {
         "charts-dthree": ChartsDthree;
         "dropdown-button": DropdownButton;
@@ -184,10 +210,12 @@ declare namespace LocalJSX {
         "dropdown-select": DropdownSelect;
         "my-component": MyComponent;
         "stencil-button": StencilButton;
+        "stencil-checkbox": StencilCheckbox;
         "stencil-dropdown": StencilDropdown;
         "stencil-hint": StencilHint;
         "stencil-input": StencilInput;
         "stencil-label": StencilLabel;
+        "stencil-search": StencilSearch;
     }
 }
 export { LocalJSX as JSX };
@@ -201,10 +229,12 @@ declare module "@stencil/core" {
             "dropdown-select": LocalJSX.DropdownSelect & JSXBase.HTMLAttributes<HTMLDropdownSelectElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
             "stencil-button": LocalJSX.StencilButton & JSXBase.HTMLAttributes<HTMLStencilButtonElement>;
+            "stencil-checkbox": LocalJSX.StencilCheckbox & JSXBase.HTMLAttributes<HTMLStencilCheckboxElement>;
             "stencil-dropdown": LocalJSX.StencilDropdown & JSXBase.HTMLAttributes<HTMLStencilDropdownElement>;
             "stencil-hint": LocalJSX.StencilHint & JSXBase.HTMLAttributes<HTMLStencilHintElement>;
             "stencil-input": LocalJSX.StencilInput & JSXBase.HTMLAttributes<HTMLStencilInputElement>;
             "stencil-label": LocalJSX.StencilLabel & JSXBase.HTMLAttributes<HTMLStencilLabelElement>;
+            "stencil-search": LocalJSX.StencilSearch & JSXBase.HTMLAttributes<HTMLStencilSearchElement>;
         }
     }
 }
