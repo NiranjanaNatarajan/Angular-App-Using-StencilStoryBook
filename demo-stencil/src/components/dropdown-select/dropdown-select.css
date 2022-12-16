@@ -1,0 +1,17 @@
+menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+slot[name="label"] {
+  align-items: center;
+  display: flex;
+}
+
+slot[name="label"] svg {
+  fill: currentcolor;
+  block-size: 1em;
+  inline-size: 0.666em;
+  margin-inline-start: 1ex;
+}
